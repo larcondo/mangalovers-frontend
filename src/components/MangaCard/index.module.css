@@ -1,0 +1,8 @@
+.mangaCard {
+  display: flex;
+  flex-direction: column;
+  padding: 1ch;
+  border: 1px solid;
+  margin: 4px;
+  border-radius: 6px;
+}
