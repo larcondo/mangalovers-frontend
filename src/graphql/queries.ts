@@ -1,50 +1,22 @@
 import { gql } from "@apollo/client";
+import { SERIES_FIELDS_COMPLETE, VOLUME_FIELDS_COMPLETE } from "./fragments";
 
 export const ALL_SERIES = gql`
   query AllSeries {
     seriesQty
     allSeries {
-      id
-      name
-      isSingleVolume
-      urlCover
-      printFormat {
-        id
-        description
-        name
-      }
-      publisher {
-        name
-        id
-      }
-      author {
-        writer {
-          id
-          name
-        }
-        illustrator {
-          id
-          name
-        }
-      }
+      ...SeriesFieldComplete
     }
   }
+  ${SERIES_FIELDS_COMPLETE}
 `;
 
 export const ALL_VOLUMES = gql`
   query AllVolumes {
     volumeQty
     allVolumes {
-      id
-      number
-      publicationDate
-      synopsis
-      title
-      urlCover
-      series {
-        id
-        name
-      }
+      ...VolumeFieldsComplete
     }
   }
+  ${VOLUME_FIELDS_COMPLETE}
 `;
