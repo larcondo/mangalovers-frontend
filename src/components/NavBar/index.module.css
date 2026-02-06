@@ -1,4 +1,28 @@
 .navBar {
+  --nav-bar-height: 3em;
   display: flex;
-  gap: 1em;
+  align-items: center;
+  justify-content: center;
+  height: var(--nav-bar-height);
+  position: relative;
+}
+
+.navBar a {
+  color: initial;
+  text-decoration: none;
+  padding: 0 2ch;
+}
+
+.navBar a:hover {
+  background-color: green;
+}
+
+.logo {
+  position: absolute;
+  left: 1em;
+  background-color: darkred;
+  box-sizing: border-box;
+  padding: 0 2em;
+  border-radius: 4px;
+  /* flex: 0.5; */
 }

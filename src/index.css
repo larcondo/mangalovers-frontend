@@ -12,3 +12,18 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.page-title {
+  text-align: center;
+}

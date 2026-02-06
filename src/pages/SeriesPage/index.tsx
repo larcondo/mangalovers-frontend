@@ -1,8 +1,10 @@
+import PageContainer from "../../components/PageContainer";
+
 const SeriesPage = () => {
   return (
-    <div>
-      <h1>Series Page</h1>
-    </div>
+    <PageContainer>
+      <h1 className="page-title">Series Page</h1>
+    </PageContainer>
   );
 };
 
