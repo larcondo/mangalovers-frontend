@@ -1,14 +1,18 @@
 import style from "./index.module.css";
-import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+
+import NavigationLink from "./NavigationLink";
 
 const NavBar = () => {
+  const { pathname } = useLocation();
+
   return (
     <nav className={style.navBar}>
       <h3 className={style.logo}>Mangalovers</h3>
-      <Link to={"/"}>Home</Link>
-      <Link to={"/series"}>Series</Link>
-      <Link to={"/volumes"}>Volumes</Link>
-      <Link to={"/login"}>Login</Link>
+      <NavigationLink path="/" text="Home" currentPath={pathname} />
+      <NavigationLink path="/series" text="Series" currentPath={pathname} />
+      <NavigationLink path="/volumes" text="Volumes" currentPath={pathname} />
+      <NavigationLink path="/login" text="Login" currentPath={pathname} />
     </nav>
   );
 };

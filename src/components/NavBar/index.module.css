@@ -7,16 +7,6 @@
   position: relative;
 }
 
-.navBar a {
-  color: initial;
-  text-decoration: none;
-  padding: 0 2ch;
-}
-
-.navBar a:hover {
-  background-color: green;
-}
-
 .logo {
   position: absolute;
   left: 1em;

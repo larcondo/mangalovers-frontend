@@ -1,0 +1,16 @@
+.navigationLink {
+  padding: 1ch 2ch;
+  text-decoration: none;
+  color: #e3e3e3;
+  border: 4px solid transparent;
+  border-radius: 0px;
+}
+
+.navigationLink:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.active {
+  font-weight: 500;
+  border-bottom-color: limegreen;
+}
