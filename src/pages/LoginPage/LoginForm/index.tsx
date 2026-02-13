@@ -3,10 +3,11 @@ import { useState } from "react";
 import useLogin from "@hooks/graphql/useLogin";
 import { useNavigate } from "react-router-dom";
 import { CombinedGraphQLErrors } from "@apollo/client";
+import { useAuth } from "@hooks/useAuth";
 
 import TextInput from "@components/TextInput";
 import PasswordInput from "@components/PasswordInput";
-import { useAuth } from "@/hooks/useAuth";
+import CircleLoader from "@components/CircleLoader";
 
 const LoginForm = () => {
   const [username, setUsername] = useState("");
@@ -61,10 +62,9 @@ const LoginForm = () => {
         onChange={handlePasswordChange}
       />
 
-      {loading && <p>Espere un momento por favor...</p>}
-
-      <button type="submit" className={styles.loginButton}>
+      <button type="submit" className={styles.loginButton} disabled={loading}>
         Ingresar
+        {loading && <CircleLoader />}
       </button>
     </form>
   );

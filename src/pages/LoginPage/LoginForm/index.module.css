@@ -20,8 +20,16 @@
   font-size: 1em;
   background-color: #565656;
   margin-top: 1em;
+  position: relative;
 }
 
 .loginButton:hover {
   background-color: #505050;
+}
+
+.loginButton > span {
+  position: absolute;
+  left: calc(50% - 1ch);
+  top: calc(50% - 1ch);
+  z-index: 2;
 }
