@@ -6,10 +6,8 @@ import { ApolloProvider } from "@apollo/client/react";
 import "./index.css";
 import router from "./router";
 
-const APOLLO_SERVER_URL = "http://localhost:4001";
-
 const httpLink = new HttpLink({
-  uri: APOLLO_SERVER_URL,
+  uri: import.meta.env.VITE_APOLLO_SERVER_URL,
 });
 
 const client = new ApolloClient({

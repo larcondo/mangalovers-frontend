@@ -1,5 +1,36 @@
 .volumeList {
-  width: 800px;
+  /* width: 800px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr); */
+  display: grid;
+  grid-template-columns: 48% 48%;
+  column-gap: 4%;
+  row-gap: 2em;
+
+  width: 90%;
+  margin: 2em auto 3em auto;
+}
+
+@media screen and (width > 600px) {
+  .volumeList {
+    width: 90%;
+    grid-template-columns: 30% 30% 30%;
+    column-gap: calc(10% / 2);
+  }
+}
+
+@media screen and (width > 800px) {
+  .volumeList {
+    width: 80%;
+    grid-template-columns: repeat(4, 22%);
+    column-gap: calc(12% / 3);
+  }
+}
+
+@media screen and (width > 1000px) {
+  .volumeList {
+    width: 80%;
+    grid-template-columns: repeat(5, 18%);
+    column-gap: calc(10% / 4);
+  }
 }

@@ -1,8 +1,38 @@
 .mangaCard {
-  display: flex;
-  flex-direction: column;
-  padding: 1ch;
-  border: 1px solid;
-  margin: 4px;
-  border-radius: 6px;
+  --manga-card-background: #1c1c1c;
+  --manga-card-hover: #434343;
+  --manga-card-border: transparent;
+  --manga-card-color: #e3e3e3;
+  border: none;
+  width: 100%;
+  max-width: 400px;
+  cursor: pointer;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: var(--manga-card-background);
+  font-size: 0.8em;
+  justify-self: center;
+}
+
+.mangaCard:hover {
+  cursor: pointer;
+  background-color: var(--manga-card-hover);
+  border-color: var(--manga-card-hover);
+}
+
+.mangaName {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--manga-card-color);
+  padding: 0.5em;
+}
+
+.mangaCard img {
+  border: none;
+  width: 100%;
+  aspect-ratio: 5 / 7;
+  display: block;
+  object-fit: cover;
+  object-position: left top;
 }

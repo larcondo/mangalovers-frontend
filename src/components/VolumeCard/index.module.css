@@ -1,8 +1,45 @@
 .volumeCard {
-  display: flex;
+  width: 100%;
+  justify-self: center;
+  cursor: pointer;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  position: relative;
+  /* display: flex;
   flex-direction: column;
   padding: 1ch;
   border: 1px dashed;
   margin: 4px;
-  border-radius: 6px;
+  border-radius: 6px; */
+}
+
+.volumeCard img {
+  aspect-ratio: 5/7;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: left top;
+}
+
+.volumeSeriesName {
+  padding: 0.5em;
+  font-size: 0.8em;
+  font-weight: bold;
+  background-color: #1c1c1c;
+  color: #e3e3e3;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+}
+
+.volumeNumber {
+  position: absolute;
+  bottom: 2em;
+  left: 0;
+  padding: 0 0.5ch;
+  border-radius: 4px 4px 0 0;
+  text-align: center;
+  color: white;
+  background-color: red;
 }

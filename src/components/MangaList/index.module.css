@@ -1,5 +1,32 @@
 .mangaList {
-  width: 800px;
+  width: 90%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 48% 48%;
+  row-gap: 2em;
+  column-gap: 4%;
+  margin: 20px auto;
+}
+
+@media screen and (width > 600px) {
+  .mangaList {
+    width: 90%;
+    grid-template-columns: 30% 30% 30%;
+    column-gap: calc(10% / 2);
+  }
+}
+
+@media screen and (width > 800px) {
+  .mangaList {
+    width: 80%;
+    grid-template-columns: repeat(4, 22%);
+    column-gap: calc(12% / 3);
+  }
+}
+
+@media screen and (width > 1000px) {
+  .mangaList {
+    width: 80%;
+    grid-template-columns: repeat(5, 18%);
+    column-gap: calc(10% / 4);
+  }
 }

@@ -1,6 +1,8 @@
 import type { Volume } from "@/types";
 import styles from "./index.module.css";
 
+import CoverImage from "@components/CoverImage";
+
 interface VolumeCardProps {
   volume?: Volume;
 }
@@ -10,11 +12,11 @@ const VolumeCard = ({ volume }: VolumeCardProps) => {
 
   return (
     <div className={styles.volumeCard}>
-      <p>
-        <b>{volume.series.name}</b>
+      <CoverImage url={volume.urlCover} />
+      <p className={styles.volumeSeriesName}>
+        <b>{volume.series.name.toUpperCase()}</b>
       </p>
-      <p>{volume.number}</p>
-      {volume.title && <p>{volume.title}</p>}
+      <p className={styles.volumeNumber}># {volume.number}</p>
     </div>
   );
 };

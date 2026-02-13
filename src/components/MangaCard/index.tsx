@@ -1,6 +1,8 @@
 import styles from "./index.module.css";
 import type { Series } from "@/types";
 
+import CoverImage from "@components/CoverImage";
+
 interface MangaCardProps {
   series?: Series;
 }
@@ -10,11 +12,10 @@ const MangaCard = ({ series }: MangaCardProps) => {
 
   return (
     <div className={styles.mangaCard}>
-      <p>
+      <CoverImage url={series.urlCover} />
+      <p className={styles.mangaName}>
         <b>{series.name.toUpperCase()}</b>
       </p>
-      <p>{series.publisher.name}</p>
-      <p>{series.printFormat.name}</p>
     </div>
   );
 };
