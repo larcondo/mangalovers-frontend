@@ -29,9 +29,11 @@
       "@/*": ["src/*"],
       "@assets/*": ["src/assets/*"],
       "@components/*": ["src/components/*"],
+      "@contexts/*": ["src/contexts/*"],
       "@graphql/*": ["src/graphql/*"],
       "@hooks/*": ["src/hooks/*"],
-      "@pages/*": ["src/pages/*"]
+      "@pages/*": ["src/pages/*"],
+      "@providers/*": ["src/providers/*"]
     }
   },
   "include": ["src"]

@@ -51,4 +51,5 @@ export type UserLogged = {
 export interface Auth {
   user: UserLogged | null;
   login: (data: UserLogged) => void;
+  logout: () => void;
 }

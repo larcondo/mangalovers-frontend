@@ -30,7 +30,6 @@ const LoginForm = () => {
     e.preventDefault();
     try {
       const data = await login({ username, password });
-      console.log(data?.login);
       if (data) {
         clearFields();
         navigate("/");
