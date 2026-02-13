@@ -5,6 +5,7 @@ import { HttpLink, ApolloClient, InMemoryCache } from "@apollo/client";
 import { ApolloProvider } from "@apollo/client/react";
 import "./index.css";
 import router from "./router";
+import { AuthProvider } from "./components/AuthProvider";
 
 const httpLink = new HttpLink({
   uri: import.meta.env.VITE_APOLLO_SERVER_URL,
@@ -18,7 +19,9 @@ const client = new ApolloClient({
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ApolloProvider client={client}>
-      <RouterProvider router={router} />
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
     </ApolloProvider>
   </StrictMode>,
 );
