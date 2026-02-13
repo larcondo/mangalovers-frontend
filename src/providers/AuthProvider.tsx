@@ -1,19 +1,20 @@
 import { useState, useMemo, type ReactNode, useCallback } from "react";
 import { AuthContext, tokenStore } from "@contexts/authContext";
-import type { UserLogged } from "@/types";
+import type { UserLogged, UserInfo } from "@/types";
 
 interface AuthProviderProps {
   children?: ReactNode;
 }
 
 const AuthProvider = ({ children }: AuthProviderProps) => {
-  const [user, setUser] = useState<UserLogged | null>(
+  const [user, setUser] = useState<UserInfo | null>(
     JSON.parse(localStorage.getItem("mluser") as string),
   );
 
   const login = useCallback((data: UserLogged) => {
-    setUser(data);
-    tokenStore.token = data.accessToken;
+    const { accessToken, ...info } = data;
+    setUser(info);
+    tokenStore.token = accessToken;
     localStorage.setItem("mluser", JSON.stringify(data));
   }, []);
 

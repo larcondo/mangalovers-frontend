@@ -48,8 +48,10 @@ export type UserLogged = {
   accessToken: string;
 };
 
+export type UserInfo = Omit<UserLogged, "accessToken">;
+
 export interface Auth {
-  user: UserLogged | null;
+  user: UserInfo | null;
   login: (data: UserLogged) => void;
   logout: () => void;
 }
