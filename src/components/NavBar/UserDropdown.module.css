@@ -1,6 +1,10 @@
 .userSection {
-  position: absolute;
-  right: 1em;
+  grid-column: 12/13;
+  box-sizing: border-box;
+  padding: 0 1em;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   z-index: 10;
 }
 
@@ -21,7 +25,7 @@
 .userSection .dialog {
   position: absolute;
   top: calc(100% + 4px);
-  right: 0;
+  right: 1em;
   width: fit-content;
   min-width: 20ch;
   padding: 1em;
@@ -46,7 +50,42 @@
   background-color: #505050;
 }
 
+.loginContainer {
+  grid-column: 11/13;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 1em;
+}
+
+.loginLink {
+  padding: 1ch 2ch;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #e3e3e3;
+  background-color: #323232;
+  transition:
+    background-color 0.1s ease-in,
+    color 0.1s ease-in;
+}
+
+.loginLink:hover {
+  background-color: #e3e3e3;
+  color: #323232;
+}
+
 .logoutButton {
   padding: 1ch 2ch;
   cursor: pointer;
+  position: relative;
+}
+
+.logoutIcon {
+  position: absolute;
+  top: calc(50% - 0.5em);
+  right: 1em;
+}
+
+.icon {
+  vertical-align: middle;
 }

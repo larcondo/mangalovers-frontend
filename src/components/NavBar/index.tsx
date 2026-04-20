@@ -12,13 +12,11 @@ const NavBar = () => {
   return (
     <nav className={styles.navBar}>
       <h3 className={styles.logo}>Mangalovers</h3>
-      <NavigationLink path="/" text="Home" currentPath={pathname} />
-      <NavigationLink path="/series" text="Series" currentPath={pathname} />
-      <NavigationLink path="/volumes" text="Volumes" currentPath={pathname} />
-      {!user && (
-        <NavigationLink path="/login" text="Login" currentPath={pathname} />
-      )}
-
+      <div className={styles.links}>
+        <NavigationLink path="/" text="Home" currentPath={pathname} />
+        <NavigationLink path="/series" text="Series" currentPath={pathname} />
+        <NavigationLink path="/volumes" text="Volumes" currentPath={pathname} />
+      </div>
       <UserDropdown user={user} logout={logout} />
     </nav>
   );

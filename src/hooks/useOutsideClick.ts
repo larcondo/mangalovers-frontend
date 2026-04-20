@@ -6,7 +6,10 @@ const useOutsideClick = <T extends HTMLElement>(callback: () => void) => {
   useEffect(() => {
     const handler = (e: MouseEvent) => {
       if (ref.current) {
-        if (!ref.current.contains(e.target as Node)) {
+        if (
+          !ref.current.contains(e.target as Node) ||
+          e.target === ref.current
+        ) {
           callback();
         }
       }
