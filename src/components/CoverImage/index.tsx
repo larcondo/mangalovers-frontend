@@ -20,6 +20,11 @@ const CoverImage = ({ url }: CoverImageProps) => {
       alt="Cover"
       loading="lazy"
       onLoad={() => setLoaded(true)}
+      onError={(e) => {
+        // Prevents infinite loop if fallbackSrc also fails
+        e.currentTarget.onerror = null;
+        e.currentTarget.src = coverNotFound;
+      }}
       className={coverImageClass}
     />
   );
