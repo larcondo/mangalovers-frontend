@@ -1,0 +1,52 @@
+.userSection {
+  position: absolute;
+  right: 1em;
+  z-index: 10;
+}
+
+.userButton {
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 20px;
+  height: 36px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: 0px solid;
+}
+
+.userButton:hover {
+  background-color: #848484;
+}
+
+.userSection .dialog {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  width: fit-content;
+  min-width: 20ch;
+  padding: 1em;
+  border: 1px solid #505050;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #303030;
+  box-shadow: 0px 10px 14px 4px #1c1c1c;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2ch;
+}
+
+.dialog p {
+  white-space: nowrap;
+}
+
+.dialog hr {
+  border: none;
+  height: 1px;
+  background-color: #505050;
+}
+
+.logoutButton {
+  padding: 1ch 2ch;
+  cursor: pointer;
+}
