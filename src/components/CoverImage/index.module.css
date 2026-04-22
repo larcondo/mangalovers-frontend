@@ -1,0 +1,16 @@
+.coverImage.loading {
+  opacity: 0;
+}
+
+.coverImage.loaded {
+  animation: imgAppear 0.3s ease-in 0s forwards;
+}
+
+@keyframes imgAppear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
