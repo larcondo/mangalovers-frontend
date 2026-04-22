@@ -11,10 +11,32 @@ export const ALL_SERIES = gql`
   ${SERIES_FIELDS_COMPLETE}
 `;
 
+export const SERIES_DETAILS = gql`
+  query SeriesDetails($id: ID!) {
+    seriesById(id: $id) {
+      ...SeriesFieldComplete
+    }
+    volumesBySeries(seriesId: $id) {
+      ...VolumeFieldsComplete
+    }
+  }
+  ${SERIES_FIELDS_COMPLETE}
+  ${VOLUME_FIELDS_COMPLETE}
+`;
+
 export const ALL_VOLUMES = gql`
   query AllVolumes {
     volumeQty
     allVolumes {
+      ...VolumeFieldsComplete
+    }
+  }
+  ${VOLUME_FIELDS_COMPLETE}
+`;
+
+export const VOLUME_DETAILS = gql`
+  query VolumeDetails($id: ID!) {
+    volumeById(id: $id) {
       ...VolumeFieldsComplete
     }
   }

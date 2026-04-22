@@ -1,4 +1,4 @@
-import type { UserLogged } from "@/types";
+import type { Series, UserLogged, Volume } from "@/types";
 
 export interface LoginResponse {
   login: UserLogged;
@@ -7,4 +7,21 @@ export interface LoginResponse {
 export interface LoginVariables {
   username: string;
   password: string;
+}
+
+export interface SeriesDetailsResponse {
+  seriesById: Series;
+  volumesBySeries: Volume[];
+}
+
+export interface SeriesDetailsVar {
+  id: string;
+}
+
+export interface VolumeDetailsResponse {
+  volumeById: Volume;
+}
+
+export interface VolumeDetailsVar {
+  id: string;
 }
