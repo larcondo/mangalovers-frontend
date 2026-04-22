@@ -1,5 +1,6 @@
 import styles from "./index.module.css";
 import type { Series } from "@/types";
+import { Link } from "react-router-dom";
 
 import CoverImage from "@components/CoverImage";
 
@@ -12,10 +13,12 @@ const MangaCard = ({ series }: MangaCardProps) => {
 
   return (
     <div className={styles.mangaCard}>
-      <CoverImage url={series.urlCover} />
-      <p className={styles.mangaName}>
-        <b>{series.name.toUpperCase()}</b>
-      </p>
+      <Link to={`/series/${series.id}`} title={series.name}>
+        <CoverImage url={series.urlCover} />
+        <p className={styles.mangaName}>
+          <b>{series.name.toUpperCase()}</b>
+        </p>
+      </Link>
     </div>
   );
 };
