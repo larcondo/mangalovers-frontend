@@ -48,9 +48,9 @@ const UserDropdown = ({ user, logout }: UserDropdownProps) => {
       </button>
       {isVisible && (
         <div className={styles.dialog}>
-          <p>
+          <Link to="/user/series" onClick={() => setIsVisible(false)}>
             <FaBook className={styles.icon} /> Mis Series
-          </p>
+          </Link>
           <p>
             <FaBookBookmark className={styles.icon} /> Mis Volumenes
           </p>

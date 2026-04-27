@@ -36,6 +36,11 @@ export interface Volume {
   series: Series;
 }
 
+export interface UserSeries {
+  id: string;
+  series: Series;
+}
+
 export interface Credentials {
   username: string;
   password: string;

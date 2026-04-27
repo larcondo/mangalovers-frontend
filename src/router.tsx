@@ -7,6 +7,7 @@ import SeriesDetailsPage from "./pages/SeriesDetailsPage";
 import VolumePage from "./pages/VolumePage";
 import VolumeDetailsPage from "./pages/VolumeDetailsPage";
 import LoginPage from "./pages/LoginPage";
+import UserSeriesPage from "./pages/UserSeriesPage";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
         path: "/volume/:id",
         element: <VolumeDetailsPage />,
         loader: ({ params }) => ({ id: params.id }),
+      },
+      {
+        path: "/user",
+        children: [{ path: "/user/series", element: <UserSeriesPage /> }],
       },
     ],
   },

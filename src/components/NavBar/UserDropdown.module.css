@@ -50,6 +50,16 @@
   background-color: #505050;
 }
 
+.dialog a {
+  text-decoration: none;
+  white-space: nowrap;
+  color: #e3e3e3;
+}
+
+.dialog a:hover {
+  color: #a0a0a0;
+}
+
 .loginContainer {
   grid-column: 11/13;
   display: flex;

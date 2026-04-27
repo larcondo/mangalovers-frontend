@@ -42,3 +42,15 @@ export const VOLUME_DETAILS = gql`
   }
   ${VOLUME_FIELDS_COMPLETE}
 `;
+
+export const USER_SERIES = gql`
+  query UserSeries {
+    userSeries {
+      id
+      series {
+        ...SeriesFieldComplete
+      }
+    }
+  }
+  ${SERIES_FIELDS_COMPLETE}
+`;
