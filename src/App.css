@@ -1,3 +1,7 @@
 main {
   height: 100vh;
 }
+
+.text-center-aligned {
+  text-align: center;
+}

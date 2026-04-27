@@ -18,7 +18,7 @@ const UserSeriesPage = () => {
     <PageContainer>
       <h1 className="page-title">Mis Series</h1>
 
-      {loading && <h3 style={{ textAlign: "center" }}>Cargando series...</h3>}
+      {loading && <h3 className="text-center-aligned">Cargando series...</h3>}
 
       <MangaList
         series={data ? data.userSeries.map((s) => s.series) : []}
