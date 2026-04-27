@@ -35,3 +35,23 @@ export interface Volume {
   publicationDate?: Date;
   series: Series;
 }
+
+export interface Credentials {
+  username: string;
+  password: string;
+}
+
+export type UserLogged = {
+  username: string;
+  email: string;
+  isAdmin: boolean;
+  accessToken: string;
+};
+
+export type UserInfo = Omit<UserLogged, "accessToken">;
+
+export interface Auth {
+  user: UserInfo | null;
+  login: (data: UserLogged) => void;
+  logout: () => void;
+}
