@@ -1,0 +1,26 @@
+.shimmer {
+  --color-background: rgba(0, 0, 0, 0.1);
+  --color-foreground: rgba(0, 0, 0, 0.3);
+  background: linear-gradient(
+    to right,
+    var(--color-background) 5%,
+    var(--color-foreground) 25%,
+    var(--color-background) 35%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 1s;
+  animation-iteration-count: infinite;
+  width: 100%;
+  aspect-ratio: 5/7;
+  border: 1px transparent;
+  border-radius: 2px;
+}
+
+@keyframes shimmer {
+  /* from {
+    background-position: -1000px 0;
+  } */
+  to {
+    background-position: 1000px 0;
+  }
+}

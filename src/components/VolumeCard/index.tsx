@@ -1,5 +1,6 @@
 import type { Volume } from "@/types";
 import styles from "./index.module.css";
+import { Link } from "react-router-dom";
 
 import CoverImage from "@components/CoverImage";
 
@@ -12,11 +13,13 @@ const VolumeCard = ({ volume }: VolumeCardProps) => {
 
   return (
     <div className={styles.volumeCard}>
-      <CoverImage url={volume.urlCover} />
-      <p className={styles.volumeSeriesName}>
-        <b>{volume.series.name.toUpperCase()}</b>
-      </p>
-      <p className={styles.volumeNumber}># {volume.number}</p>
+      <Link to={`/volume/${volume.id}`} title={volume.series.name}>
+        <CoverImage url={volume.urlCover} />
+        <p className={styles.volumeSeriesName}>
+          <b>{volume.series.name.toUpperCase()}</b>
+        </p>
+        <p className={styles.volumeNumber}># {volume.number}</p>
+      </Link>
     </div>
   );
 };

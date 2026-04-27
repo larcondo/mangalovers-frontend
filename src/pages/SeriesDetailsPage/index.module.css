@@ -1,0 +1,21 @@
+.seriesLayout {
+  margin: 1em auto;
+  max-width: 600px;
+  display: flex;
+  font-family: "Chillax-Variable";
+}
+
+.seriesLayout .coverSection {
+  width: 300px;
+  aspect-ratio: 9/13;
+}
+
+.seriesLayout .coverSection img {
+  width: 100%;
+}
+
+.seriesLayout .infoSection {
+  text-align: left;
+  padding: 1em;
+  flex-grow: 1;
+}

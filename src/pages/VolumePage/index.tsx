@@ -7,15 +7,15 @@ const VolumePage = () => {
 
   if (error) return <p>Hubo un error</p>;
 
-  if (loading) return <p>Cargando...</p>;
-
   return (
     <PageContainer>
       <h1 className="page-title">Volume Page</h1>
-      {data && (
-        <h3 style={{ textAlign: "center" }}>{data.volumeQty} volumes</h3>
-      )}
-      {data && <VolumeList volumes={data.allVolumes} />}
+
+      <h3 className="text-center-aligned">
+        {loading ? "Cargando volumenes..." : `${data?.volumeQty} volumes`}
+      </h3>
+
+      <VolumeList volumes={data?.allVolumes} loading={loading} />
     </PageContainer>
   );
 };

@@ -1,0 +1,29 @@
+.volumeLayout {
+  margin: 1em auto;
+  max-width: 800px;
+  display: flex;
+}
+
+.volumeLayout .coverSection {
+  width: 40%;
+  aspect-ratio: 9/16;
+}
+
+.volumeLayout .coverSection img {
+  width: 100%;
+}
+
+.volumeLayout .infoSection {
+  text-align: left;
+  padding: 1em;
+  width: 60%;
+}
+
+.volumeLayout .infoSection a {
+  color: initial;
+  text-decoration: none;
+}
+
+.volumeLayout .infoSection a:hover {
+  color: #c3c3ff;
+}

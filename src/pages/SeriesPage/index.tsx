@@ -7,14 +7,15 @@ const SeriesPage = () => {
 
   if (error) return <p>Hubo un error</p>;
 
-  if (loading) return <p>Cargando...</p>;
-
   return (
     <PageContainer>
       <h1 className="page-title">Series Page</h1>
-      {data && <h3 style={{ textAlign: "center" }}>{data.seriesQty} series</h3>}
 
-      {data && <MangaList series={data.allSeries} />}
+      <h3 className="text-center-aligned">
+        {loading ? "Cargando series..." : `${data?.seriesQty} series`}
+      </h3>
+
+      <MangaList series={data?.allSeries} loading={loading} />
     </PageContainer>
   );
 };

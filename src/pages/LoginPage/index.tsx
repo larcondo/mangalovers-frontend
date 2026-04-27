@@ -6,7 +6,7 @@ const LoginPage = () => {
   return (
     <div>
       <Link to={"/"}>Home</Link>
-      <h1 style={{ textAlign: "center" }}>Login Page</h1>
+      <h1 className="text-center-aligned">Login Page</h1>
       <LoginForm />
     </div>
   );

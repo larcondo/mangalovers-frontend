@@ -32,7 +32,12 @@ export interface Volume {
   title?: string;
   synopsis?: string;
   urlCover?: string;
-  publicationDate?: Date;
+  publicationDate?: string;
+  series: Series;
+}
+
+export interface UserSeries {
+  id: string;
   series: Series;
 }
 
