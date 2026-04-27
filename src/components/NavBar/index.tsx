@@ -1,22 +1,23 @@
-import style from "./index.module.css";
+import styles from "./index.module.css";
 import { useLocation } from "react-router-dom";
+import { useAuth } from "@hooks/useAuth";
 
 import NavigationLink from "./NavigationLink";
-import { useAuth } from "@/hooks/useAuth";
+import UserDropdown from "./UserDropdown";
 
 const NavBar = () => {
-  const { user } = useAuth();
+  const { user, logout } = useAuth();
   const { pathname } = useLocation();
 
   return (
-    <nav className={style.navBar}>
-      <h3 className={style.logo}>Mangalovers</h3>
-      <NavigationLink path="/" text="Home" currentPath={pathname} />
-      <NavigationLink path="/series" text="Series" currentPath={pathname} />
-      <NavigationLink path="/volumes" text="Volumes" currentPath={pathname} />
-      {!user && (
-        <NavigationLink path="/login" text="Login" currentPath={pathname} />
-      )}
+    <nav className={styles.navBar}>
+      <h3 className={styles.logo}>Mangalovers</h3>
+      <div className={styles.links}>
+        <NavigationLink path="/" text="Home" currentPath={pathname} />
+        <NavigationLink path="/series" text="Series" currentPath={pathname} />
+        <NavigationLink path="/volumes" text="Volumes" currentPath={pathname} />
+      </div>
+      <UserDropdown user={user} logout={logout} />
     </nav>
   );
 };
