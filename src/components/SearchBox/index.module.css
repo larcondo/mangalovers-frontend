@@ -1,0 +1,50 @@
+.searchBox {
+  width: 100%;
+  position: relative;
+  /* background-color: #1c1c1c; */
+}
+
+.searchBox input {
+  width: 100%;
+  font-size: 14px;
+  padding: 1ch;
+  border: 1px solid #434343;
+  border-radius: 4px;
+}
+
+.searchBox label {
+  width: 100%;
+  text-align: left;
+  font-size: 14px;
+  padding: 0.5ch;
+  color: #bbb;
+}
+
+.lista {
+  position: absolute;
+  width: calc(100% - 4px);
+  left: 2px;
+  margin: 0;
+  margin-top: 2px;
+  padding: 0;
+  list-style-type: none;
+  background-color: #1c1c1c;
+  border: 1px solid #444;
+  border-radius: 4px;
+  z-index: 10;
+}
+
+.lista li {
+  cursor: pointer;
+  padding: 0.5ch;
+  border-bottom: 1px solid #555;
+  font-size: 0.9em;
+}
+
+.lista li:last-child {
+  border-bottom: none;
+}
+
+.lista li:hover {
+  background-color: #282828;
+}
