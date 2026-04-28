@@ -1,4 +1,12 @@
-import type { Series, UserLogged, UserSeries, Volume } from "@/types";
+import type {
+  Artist,
+  PrintFormatBasic,
+  Publisher,
+  Series,
+  UserLogged,
+  UserSeries,
+  Volume,
+} from "@/types";
 
 export interface LoginResponse {
   login: UserLogged;
@@ -28,4 +36,31 @@ export interface VolumeDetailsVar {
 
 export interface UserSeriesResponse {
   userSeries: UserSeries[];
+}
+
+// search artists
+export interface SearchArtistsResponse {
+  searchArtists: Artist[];
+}
+
+export interface SearchArtistsVariables {
+  query: string;
+}
+
+// search publishers
+export interface SearchPublishersResponse {
+  searchPublishers: Publisher[];
+}
+
+export interface SearchPublishersVariables {
+  query: string;
+}
+
+// search printFormats
+export interface SearchPrintFormatsResponse {
+  searchPrintFormats: PrintFormatBasic[];
+}
+
+export interface SearchPrintFormatsVariables {
+  query: string;
 }

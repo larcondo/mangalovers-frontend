@@ -54,3 +54,30 @@ export const USER_SERIES = gql`
   }
   ${SERIES_FIELDS_COMPLETE}
 `;
+
+export const SEARCH_ARTISTS = gql`
+  query SearchArtists($query: String!) {
+    searchArtists(query: $query) {
+      id
+      name
+    }
+  }
+`;
+
+export const SEARCH_PUBLISHERS = gql`
+  query SearchPublishers($query: String!) {
+    searchPublishers(query: $query) {
+      id
+      name
+    }
+  }
+`;
+
+export const SEARCH_PRINT_FORMATS = gql`
+  query SearchPrintFormats($query: String!) {
+    searchPrintFormats(query: $query) {
+      id
+      name
+    }
+  }
+`;
