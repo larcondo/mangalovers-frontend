@@ -1,15 +1,20 @@
 export interface Artist {
+  id: string;
   name: string;
 }
 
 export interface Publisher {
+  id: string;
   name: string;
 }
 
 export interface PrintFormat {
+  id: string;
   name: string;
   description?: string;
 }
+
+export type PrintFormatBasic = Omit<PrintFormat, "description">;
 
 export interface Author {
   writer: Artist;
