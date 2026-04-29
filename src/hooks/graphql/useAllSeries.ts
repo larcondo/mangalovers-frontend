@@ -1,14 +1,26 @@
-import type { Series } from "@/types";
+import type { Pagination, Series } from "@/types";
 import { ALL_SERIES } from "@graphql/queries";
 import { useQuery } from "@apollo/client/react";
 
 interface AllSeriesResponse {
   seriesQty: number;
-  allSeries: Series[];
+  allSeries: {
+    pagination: Pagination;
+    series: Series[];
+  };
 }
 
-const useAllSeries = () => {
-  const { data, loading, error } = useQuery<AllSeriesResponse>(ALL_SERIES);
+interface AllSeriesVariables {
+  page: number;
+}
+
+const useAllSeries = (page: number = 1) => {
+  const { data, loading, error } = useQuery<
+    AllSeriesResponse,
+    AllSeriesVariables
+  >(ALL_SERIES, {
+    variables: { page },
+  });
 
   return { data, loading, error };
 };
