@@ -1,5 +1,6 @@
 import type {
   Artist,
+  PrintFormat,
   PrintFormatBasic,
   Publisher,
   Series,
@@ -15,6 +16,34 @@ export interface LoginResponse {
 export interface LoginVariables {
   username: string;
   password: string;
+}
+
+// create new artist
+export interface CreateArtistResponse {
+  createArtist: Artist;
+}
+
+export interface CreateArtistVariables {
+  name: string;
+}
+
+// create new print format
+export interface CreatePrintFormatResponse {
+  createPrintFormat: PrintFormat;
+}
+
+export interface CreatePrintFormatVariables {
+  name: string;
+  description?: string | null;
+}
+
+// create new publisher
+export interface CreatePublisherResponse {
+  createPublisher: Publisher;
+}
+
+export interface CreatePublisherVariables {
+  name: string;
 }
 
 export interface SeriesDetailsResponse {
