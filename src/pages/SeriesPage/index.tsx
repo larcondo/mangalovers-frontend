@@ -3,7 +3,7 @@ import PageContainer from "@components/PageContainer";
 import MangaList from "@components/MangaList";
 
 const SeriesPage = () => {
-  const { data, loading, error } = useAllSeries();
+  const { data, loading, error } = useAllSeries(1);
 
   if (error) return <p>Hubo un error</p>;
 
@@ -15,7 +15,7 @@ const SeriesPage = () => {
         {loading ? "Cargando series..." : `${data?.seriesQty} series`}
       </h3>
 
-      <MangaList series={data?.allSeries} loading={loading} />
+      <MangaList series={data?.allSeries.series} loading={loading} />
     </PageContainer>
   );
 };

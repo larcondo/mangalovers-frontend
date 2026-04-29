@@ -43,3 +43,14 @@ export const VOLUME_FIELDS_COMPLETE = gql`
     }
   }
 `;
+
+export const PAGINATION_FIELDS_COMPLETE = gql`
+  fragment PaginationFieldsComplete on Pagination {
+    page
+    totalPages
+    totalEntries
+    offset
+    hasNextPage
+    nextPage
+  }
+`;

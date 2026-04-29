@@ -1,14 +1,24 @@
 import { gql } from "@apollo/client";
-import { SERIES_FIELDS_COMPLETE, VOLUME_FIELDS_COMPLETE } from "./fragments";
+import {
+  SERIES_FIELDS_COMPLETE,
+  VOLUME_FIELDS_COMPLETE,
+  PAGINATION_FIELDS_COMPLETE,
+} from "./fragments";
 
 export const ALL_SERIES = gql`
   query AllSeries {
     seriesQty
     allSeries {
-      ...SeriesFieldComplete
+      pagination {
+        ...PaginationFieldsComplete
+      }
+      series {
+        ...SeriesFieldComplete
+      }
     }
   }
   ${SERIES_FIELDS_COMPLETE}
+  ${PAGINATION_FIELDS_COMPLETE}
 `;
 
 export const SERIES_DETAILS = gql`
@@ -28,10 +38,16 @@ export const ALL_VOLUMES = gql`
   query AllVolumes {
     volumeQty
     allVolumes {
-      ...VolumeFieldsComplete
+      pagination {
+        ...PaginationFieldsComplete
+      }
+      volumes {
+        ...VolumeFieldsComplete
+      }
     }
   }
   ${VOLUME_FIELDS_COMPLETE}
+  ${PAGINATION_FIELDS_COMPLETE}
 `;
 
 export const VOLUME_DETAILS = gql`

@@ -41,6 +41,15 @@ export interface Volume {
   series: Series;
 }
 
+export interface Pagination {
+  page: number;
+  totalPages: number;
+  totalEntries: number;
+  offset: number;
+  hasNextPage: boolean;
+  nextPage: number | null;
+}
+
 export interface UserSeries {
   id: string;
   series: Series;

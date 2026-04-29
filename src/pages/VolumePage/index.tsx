@@ -3,7 +3,7 @@ import PageContainer from "@components/PageContainer";
 import VolumeList from "@components/VolumeList";
 
 const VolumePage = () => {
-  const { data, loading, error } = useAllVolumes();
+  const { data, loading, error } = useAllVolumes(1);
 
   if (error) return <p>Hubo un error</p>;
 
@@ -15,7 +15,7 @@ const VolumePage = () => {
         {loading ? "Cargando volumenes..." : `${data?.volumeQty} volumes`}
       </h3>
 
-      <VolumeList volumes={data?.allVolumes} loading={loading} />
+      <VolumeList volumes={data?.allVolumes.volumes} loading={loading} />
     </PageContainer>
   );
 };
