@@ -74,3 +74,9 @@ export interface Auth {
   login: (data: UserLogged) => void;
   logout: () => void;
 }
+
+export interface ImageToUpload {
+  name: string;
+  preview: string;
+  raw: File;
+}
