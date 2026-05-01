@@ -49,6 +49,21 @@ export interface CreatePublisherVariables {
   name: string;
 }
 
+// create new series
+export interface CreateSeriesResponse {
+  createSeries: SeriesSimple;
+}
+
+export interface CreateSeriesVariables {
+  name: string;
+  illustratorId: string;
+  writerId: string;
+  printFormatId: string;
+  publisherId: string;
+  urlCover?: string;
+  isSingleVolume?: boolean;
+}
+
 // get all series
 export interface AllSeriesResponse {
   seriesQty: number;

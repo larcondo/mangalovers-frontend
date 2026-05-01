@@ -1,4 +1,5 @@
 import { gql } from "@apollo/client";
+import { SERIES_FIELDS_SIMPLE } from "./fragments";
 
 export const LOGIN = gql`
   mutation Login($username: String!, $password: String!) {
@@ -37,4 +38,29 @@ export const CREATE_PUBLISHER = gql`
       name
     }
   }
+`;
+
+export const CREATE_SERIES = gql`
+  mutation CreateSeries(
+    $name: String!
+    $illustratorId: ID!
+    $writerId: ID!
+    $printFormatId: ID!
+    $publisherId: ID!
+    $urlCover: String
+    $isSingleVolume: Boolean
+  ) {
+    createSeries(
+      name: $name
+      illustratorId: $illustratorId
+      writerId: $writerId
+      printFormatId: $printFormatId
+      publisherId: $publisherId
+      urlCover: $urlCover
+      isSingleVolume: $isSingleVolume
+    ) {
+      ...SeriesFieldSimple
+    }
+  }
+  ${SERIES_FIELDS_SIMPLE}
 `;

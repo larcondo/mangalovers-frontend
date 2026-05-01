@@ -1,0 +1,50 @@
+.createForm {
+  max-width: 600px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.buttonsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  padding-bottom: 1em;
+}
+
+.buttonsContainer button {
+  padding: 1ch 2ch;
+  cursor: pointer;
+}
+
+.sectionImage {
+  grid-column: 1/2;
+}
+
+.sectionFields {
+  grid-column: 2/3;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+}
+
+.sectionButtons {
+  grid-column: 1/3;
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+
+.sectionButtons button {
+  padding: 1ch 4ch;
+  cursor: pointer;
+}
+
+.switchContainer {
+  display: flex;
+  align-items: center;
+  gap: 2ch;
+}
