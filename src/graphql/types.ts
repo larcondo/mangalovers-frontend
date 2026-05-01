@@ -1,12 +1,15 @@
 import type {
   Artist,
+  Pagination,
   PrintFormat,
   PrintFormatBasic,
   Publisher,
   Series,
+  SeriesSimple,
   UserLogged,
   UserSeries,
   Volume,
+  VolumeSimple,
 } from "@/types";
 
 export interface LoginResponse {
@@ -44,6 +47,32 @@ export interface CreatePublisherResponse {
 
 export interface CreatePublisherVariables {
   name: string;
+}
+
+// get all series
+export interface AllSeriesResponse {
+  seriesQty: number;
+  allSeries: {
+    pagination: Pagination;
+    series: SeriesSimple[];
+  };
+}
+
+export interface AllSeriesVariables {
+  page: number;
+}
+
+// get all volumes
+export interface AllVolumesResponse {
+  volumeQty: number;
+  allVolumes: {
+    pagination: Pagination;
+    volumes: VolumeSimple[];
+  };
+}
+
+export interface AllVolumesVariables {
+  page: number;
 }
 
 export interface SeriesDetailsResponse {

@@ -1,11 +1,11 @@
 import styles from "./index.module.css";
-import type { Series } from "@/types";
+import type { SeriesSimple } from "@/types";
 import { Link } from "react-router-dom";
 
 import CoverImage from "@components/CoverImage";
 
 interface MangaCardProps {
-  series?: Series;
+  series?: SeriesSimple;
 }
 
 const MangaCard = ({ series }: MangaCardProps) => {

@@ -1,10 +1,10 @@
 import styles from "./index.module.css";
-import type { Volume } from "@/types";
+import type { VolumeSimple } from "@/types";
 import VolumeCard from "@components/VolumeCard";
 import ShimmerCard from "@components/ShimmerCard";
 
 interface VolumeListProps {
-  volumes?: Volume[] | undefined;
+  volumes?: VolumeSimple[] | undefined;
   loading?: boolean;
 }
 

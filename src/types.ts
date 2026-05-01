@@ -31,6 +31,11 @@ export interface Series {
   isSingleVolume: boolean;
 }
 
+export type SeriesSimple = Pick<
+  Series,
+  "id" | "name" | "isSingleVolume" | "urlCover"
+>;
+
 export interface Volume {
   id: string;
   number: number;
@@ -39,6 +44,13 @@ export interface Volume {
   urlCover?: string;
   publicationDate?: string;
   series: Series;
+}
+
+export interface VolumeSimple {
+  id: string;
+  number: number;
+  urlCover?: string;
+  series: SeriesSimple;
 }
 
 export interface Pagination {

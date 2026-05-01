@@ -1,11 +1,11 @@
-import type { Volume } from "@/types";
+import type { VolumeSimple } from "@/types";
 import styles from "./index.module.css";
 import { Link } from "react-router-dom";
 
 import CoverImage from "@components/CoverImage";
 
 interface VolumeCardProps {
-  volume?: Volume;
+  volume?: VolumeSimple;
 }
 
 const VolumeCard = ({ volume }: VolumeCardProps) => {

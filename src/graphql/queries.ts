@@ -1,7 +1,9 @@
 import { gql } from "@apollo/client";
 import {
   SERIES_FIELDS_COMPLETE,
+  SERIES_FIELDS_SIMPLE,
   VOLUME_FIELDS_COMPLETE,
+  VOLUME_FIELDS_SIMPLE,
   PAGINATION_FIELDS_COMPLETE,
 } from "./fragments";
 
@@ -13,11 +15,11 @@ export const ALL_SERIES = gql`
         ...PaginationFieldsComplete
       }
       series {
-        ...SeriesFieldComplete
+        ...SeriesFieldSimple
       }
     }
   }
-  ${SERIES_FIELDS_COMPLETE}
+  ${SERIES_FIELDS_SIMPLE}
   ${PAGINATION_FIELDS_COMPLETE}
 `;
 
@@ -42,11 +44,11 @@ export const ALL_VOLUMES = gql`
         ...PaginationFieldsComplete
       }
       volumes {
-        ...VolumeFieldsComplete
+        ...VolumeFieldsSimple
       }
     }
   }
-  ${VOLUME_FIELDS_COMPLETE}
+  ${VOLUME_FIELDS_SIMPLE}
   ${PAGINATION_FIELDS_COMPLETE}
 `;
 

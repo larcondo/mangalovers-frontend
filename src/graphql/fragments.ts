@@ -28,6 +28,15 @@ export const SERIES_FIELDS_COMPLETE = gql`
   }
 `;
 
+export const SERIES_FIELDS_SIMPLE = gql`
+  fragment SeriesFieldSimple on Series {
+    id
+    name
+    isSingleVolume
+    urlCover
+  }
+`;
+
 export const VOLUME_FIELDS_COMPLETE = gql`
   fragment VolumeFieldsComplete on Volume {
     id
@@ -35,6 +44,19 @@ export const VOLUME_FIELDS_COMPLETE = gql`
     publicationDate
     synopsis
     title
+    urlCover
+    series {
+      id
+      name
+      isSingleVolume
+    }
+  }
+`;
+
+export const VOLUME_FIELDS_SIMPLE = gql`
+  fragment VolumeFieldsSimple on Volume {
+    id
+    number
     urlCover
     series {
       id
