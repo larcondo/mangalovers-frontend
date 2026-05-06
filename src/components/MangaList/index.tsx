@@ -1,10 +1,10 @@
 import styles from "./index.module.css";
-import type { Series } from "@/types";
+import type { SeriesSimple } from "@/types";
 import MangaCard from "@components/MangaCard";
 import ShimmerCard from "@components/ShimmerCard";
 
 interface MangaListProps {
-  series?: Series[] | undefined;
+  series?: SeriesSimple[] | undefined;
   loading?: boolean;
 }
 

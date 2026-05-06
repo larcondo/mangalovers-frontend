@@ -1,0 +1,75 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  border: 1px solid #bbb;
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  cursor: pointer;
+  position: relative;
+}
+
+.changeImg {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ccc;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+}
+
+.changeImg:hover {
+  opacity: 1;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  aspect-ratio: 5/7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.imagePlaceholder:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.label span {
+  margin: 0;
+}
+
+.imagePreview {
+  display: block;
+  width: 100%;
+}
+
+.imagePreview:hover {
+  filter: blur(1px);
+}
+
+.dataContainer {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  padding: 2px;
+}
+
+.data {
+  font-size: 12px;
+}
+
+.data:nth-child(even) {
+  text-align: right;
+}

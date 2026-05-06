@@ -12,11 +12,19 @@ const TextInput = ({
   value,
   label = "Label",
   onChange,
-}: TextInputProps) => {
+  ...props
+}: TextInputProps & React.ComponentProps<"input">) => {
   return (
     <div className={styles.textInput}>
       <label htmlFor={id}>{label}</label>
-      <input type="text" name={id} id={id} value={value} onChange={onChange} />
+      <input
+        type="text"
+        name={id}
+        id={id}
+        value={value}
+        onChange={onChange}
+        {...props}
+      />
     </div>
   );
 };

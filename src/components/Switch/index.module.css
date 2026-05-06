@@ -1,0 +1,34 @@
+.switch {
+  cursor: pointer;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+  background-color: #444;
+  border-radius: 1em;
+  position: relative;
+  transition: 0.3s all ease-in-out;
+}
+
+.switch .slider {
+  display: inline-block;
+  width: 1.5em;
+  aspect-ratio: 1;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 0.25em;
+  left: 0.25em;
+  transition: 0.3s all ease-in-out;
+}
+
+.switch:has(.checkbox:checked) {
+  background-color: #888;
+}
+
+.switch .checkbox:checked + .slider {
+  transform: translateX(1.5em);
+}
+
+.switch .checkbox {
+  display: none;
+}

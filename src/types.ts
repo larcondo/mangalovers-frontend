@@ -1,15 +1,20 @@
 export interface Artist {
+  id: string;
   name: string;
 }
 
 export interface Publisher {
+  id: string;
   name: string;
 }
 
 export interface PrintFormat {
+  id: string;
   name: string;
   description?: string;
 }
+
+export type PrintFormatBasic = Omit<PrintFormat, "description">;
 
 export interface Author {
   writer: Artist;
@@ -26,6 +31,11 @@ export interface Series {
   isSingleVolume: boolean;
 }
 
+export type SeriesSimple = Pick<
+  Series,
+  "id" | "name" | "isSingleVolume" | "urlCover"
+>;
+
 export interface Volume {
   id: string;
   number: number;
@@ -34,6 +44,13 @@ export interface Volume {
   urlCover?: string;
   publicationDate?: string;
   series: Series;
+}
+
+export interface VolumeSimple {
+  id: string;
+  number: number;
+  urlCover?: string;
+  series: SeriesSimple;
 }
 
 export interface Pagination {
@@ -68,4 +85,10 @@ export interface Auth {
   user: UserInfo | null;
   login: (data: UserLogged) => void;
   logout: () => void;
+}
+
+export interface ImageToUpload {
+  name: string;
+  preview: string;
+  raw: File;
 }
